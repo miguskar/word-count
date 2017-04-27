@@ -31,6 +31,26 @@ describe('word count', function() {
     assert(count('داد فارسی ۱۲۳۱۲۳'), 3);
   });
 
+  it('should count Cyrillic', function() {
+    assert(count('Фред Фред'), 2);
+  });
+
+  it('should count Cyrillic and English', function() {
+    assert(count('is this really Кириллица'), 4);
+  });
+
+  it('should count lowercase Swedish åäö', function() {
+    assert(count('rör måsen här'), 3);
+  });
+
+  it('should count uppercase Swedish ÅÄÖ', function() {
+    assert(count('Ät Åsnans Öra'), 3);
+  });
+
+  it('should count Swedish and English', function() {
+    assert(count('Swedish är kul'), 3);
+  });
+
   it('should count 0 words', function() {
     assert(count('"- - - - - - - - - - - - - -"'), 0);
   });
