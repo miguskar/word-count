@@ -51,8 +51,7 @@ describe('word count', function() {
     assert(count('Swedish är kul'), 3);
   });
 
-  it('should count 0 words', function() {
-    assert(count('"- - - - - - - - - - - - - -"'), 0);
+  it('should count 1 word', function() {
+    assert(count('hejsan-svejsan'), 1);
   });
-
 });
